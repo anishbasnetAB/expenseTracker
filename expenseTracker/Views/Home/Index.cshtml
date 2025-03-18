@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container py-4">
+
+
+    <div class="row">
+        <!-- Left Side: Expense Total and Pie Chart -->
+        <div class="col-md-4">
+            <!-- Total Monthly Expenses -->
+            <div class="card text-bg-primary mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Current Month Expenses</h5>
+                    <h2 class="card-text">$@ViewBag.TotalMonthlyExpense.ToString("N2")</h2>
+                </div>
+            </div>
+
+            <!-- Pie Chart: Expenses by Category -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Expenses by Category</h5>
+                    <canvas id="categoryPieChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Bar Chart -->
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Monthly Expenses (Current Year)</h5>
+                    <canvas id="monthlyExpensesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Bar Chart - Monthly Expenses
+        const ctx = document.getElementById('monthlyExpensesChart');
+
+        const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const expenseData = Array(12).fill(0);
+
+        @foreach (var item in ViewBag.MonthlyExpenses)
+        {
+            @:expenseData[@item.Month - 1] = @item.Total;
+        }
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Expense ($)',
+                        data: expenseData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+        // Pie Chart - Category-wise Expenses
+        const ctxPie = document.getElementById('categoryPieChart');
+
+        const pieLabels = [
+        @foreach (var item in ViewBag.CategoryExpenses)
+        {
+            @:'@item.CategoryName',
+        }
+                ];
+
+        const pieData = [
+        @foreach (var item in ViewBag.CategoryExpenses)
+        {
+            @:@item.Total,
+        }
+                ];
+
+        new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: pieLabels,
+                datasets: [{
+                    data: pieData,
+                    backgroundColor: [
+                        '#007bff',
+                        '#dc3545',
+                        '#ffc107',
+                        '#28a745',
+                        '#17a2b8',
+                        '#6f42c1'
+                    ],
+                    hoverOffset: 4
+                }]
+            }
+        });
+    </script>
+}
