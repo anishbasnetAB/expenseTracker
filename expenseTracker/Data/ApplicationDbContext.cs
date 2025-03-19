@@ -13,5 +13,6 @@ namespace expenseTracker.Data
 
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<MonthlyHistoryViewModel> MonthlyHistoryViewModel { get; set; }
     }
 }

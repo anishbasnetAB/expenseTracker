@@ -15,7 +15,6 @@ namespace expenseTracker.Controllers
             _context = context;
         }
 
-        // ✅ Missing Index method clearly added back here
         // GET: Expenses
         public async Task<IActionResult> Index()
         {
@@ -23,14 +22,14 @@ namespace expenseTracker.Controllers
             return View(expenses);
         }
 
-        // ✅ Also providing Create method (GET)
+        // GET: Expenses/Create
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
             return View();
         }
 
-        // ✅ Create method (POST)
+        // POST: Expenses/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Expense expense)
@@ -46,7 +45,7 @@ namespace expenseTracker.Controllers
             return View(expense);
         }
 
-        // ✅ Edit method (GET)
+        // GET: Expenses/Edit/{id}
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -58,7 +57,7 @@ namespace expenseTracker.Controllers
             return View(expense);
         }
 
-        // ✅ Edit method (POST)
+        // POST: Expenses/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Expense expense)
@@ -76,19 +75,21 @@ namespace expenseTracker.Controllers
             return View(expense);
         }
 
-        // ✅ Delete method (GET)
+        // GET: Expenses/Delete/{id}
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
 
-            var expense = await _context.Expenses.Include(e => e.Category)
-                                                 .FirstOrDefaultAsync(m => m.Id == id);
+            var expense = await _context.Expenses
+                .Include(e => e.Category)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             if (expense == null) return NotFound();
 
             return View(expense);
         }
 
-        // ✅ DeleteConfirmed method (POST)
+        // POST: Expenses/Delete/{id}
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -100,6 +101,68 @@ namespace expenseTracker.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        // GET: Expenses/History
+        // Displays monthly summary (grouped by month, year)
+        public async Task<IActionResult> History(int? year, int? month)
+        {
+            var expenses = _context.Expenses.Include(e => e.Category).AsQueryable();
+
+            // If user clicked a specific month
+            if (year.HasValue && month.HasValue)
+            {
+                expenses = expenses.Where(e => e.ExpenseDate.Year == year && e.ExpenseDate.Month == month);
+                ViewBag.SelectedMonth = new DateTime(year.Value, month.Value, 1).ToString("MMMM yyyy");
+                return View("HistoryDetails", await expenses.ToListAsync());
+            }
+
+            // Otherwise, show monthly grouped data
+            var historyData = await expenses
+                .GroupBy(e => new { e.ExpenseDate.Year, e.ExpenseDate.Month })
+                .Select(g => new MonthlyHistoryViewModel
+                {
+                    Year = g.Key.Year,
+                    Month = g.Key.Month,
+                    TotalAmount = g.Sum(e => e.Amount)
+                })
+                .OrderByDescending(h => h.Year)
+                .ThenByDescending(h => h.Month)
+                .ToListAsync();
+
+            return View(historyData);
+        }
+
+        // GET: Expenses/Details/{year}/{month}
+        // Shows a specific month’s expenses + category-wise pie chart
+        [HttpGet]
+        public async Task<IActionResult> Details(int year, int month)
+        {
+            // 1. Query expenses for the specified month
+            var expenses = await _context.Expenses
+                .Where(e => e.ExpenseDate.Year == year && e.ExpenseDate.Month == month)
+                .Include(e => e.Category)
+                .ToListAsync();
+
+            // 2. Prepare data for the Pie Chart
+            var categoryData = expenses
+                .GroupBy(e => e.Category.Name)
+                .Select(g => new
+                {
+                    CategoryName = g.Key,
+                    Total = g.Sum(e => e.Amount)
+                })
+                .ToList();
+
+            ViewBag.CategoryData = categoryData;
+
+            // 3. Display month name
+            ViewBag.MonthName = new DateTime(year, month, 1).ToString("MMMM yyyy");
+            ViewBag.Year = year;
+            ViewBag.Month = month;
+
+            // 4. Return the monthly expenses
+            return View(expenses);
         }
     }
 }

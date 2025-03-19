@@ -1,0 +1,95 @@
+﻿@model IEnumerable<expenseTracker.Models.Expense>
+
+@{
+    ViewData["Title"] = $"Details for {ViewBag.SelectedMonth}";
+
+    // Group data by Category Name for the Pie Chart
+    var categoryData = Model
+        .GroupBy(e => e.Category?.Name)
+        .Select(g => new
+        {
+            CategoryName = g.Key ?? "No Category",
+            Total = g.Sum(e => e.Amount)
+        })
+        .ToList();
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<!-- Expenses Table -->
+<table class="table">
+    <thead>
+        <tr class="table-dark">
+            <th>Title</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Amount ($)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var expense in Model)
+        {
+            <tr>
+                <td>@expense.Title</td>
+                <td>@expense.Category?.Name</td>
+                <td>@expense.ExpenseDate.ToString("dd MMM yyyy")</td>
+                <td>@expense.Amount.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Pie Chart Card -->
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Category-wise Expenses</h5>
+
+        <!-- Limit to 400px wide, automatically adjusts height -->
+        <div style="max-width: 400px;">
+            <canvas id="categoryPieChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<a asp-action="History" class="btn btn-secondary">← Back to History</a>
+
+@section Scripts {
+    <!-- Ensure you have Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Safely build pieLabels and pieData arrays with push (no trailing comma issues)
+        const pieLabels = [];
+        const pieData = [];
+
+        @foreach (var item in categoryData)
+        {
+            <text>
+                pieLabels.push("@item.CategoryName");
+            pieData.push(@item.Total);
+            </text>
+        }
+
+                // Render the Pie Chart
+                const ctxPie = document.getElementById('categoryPieChart');
+        new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: pieLabels,
+                datasets: [{
+                    data: pieData,
+                    backgroundColor: [
+                        '#007bff',
+                        '#dc3545',
+                        '#ffc107',
+                        '#28a745',
+                        '#17a2b8',
+                        '#6f42c1',
+                        '#fd7e14'
+                    ],
+                    hoverOffset: 4
+                }]
+            }
+        });
+    </script>
+}

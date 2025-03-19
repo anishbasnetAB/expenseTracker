@@ -1,0 +1,35 @@
+﻿@model IEnumerable<expenseTracker.Models.MonthlyHistoryViewModel>
+
+@{
+    ViewData["Title"] = "Expense History";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr class="table-dark">
+            <th>#</th>
+            <th>Month</th>
+            <th>Total Expenses</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@(new DateTime(item.Year, item.Month, 1).ToString("MMMM yyyy"))</td>
+                <td>@item.TotalAmount.ToString("C")</td>
+                <td>
+                    <a asp-action="History" asp-route-year="@item.Year" asp-route-month="@item.Month" class="btn btn-primary btn-sm">View Details</a>
+                </td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>
