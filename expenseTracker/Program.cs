@@ -1,18 +1,19 @@
 using expenseTracker.Data;
-using Microsoft.EntityFrameworkCore;
+using expenseTracker.Models; // Needed for ApplicationUser
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure Entity Framework Core and SQL Server
+// 1. Configure Entity Framework Core and SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure ASP.NET Core Identity
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+// 2. Configure ASP.NET Core Identity using ApplicationUser
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -30,14 +31,16 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// 3. Enable authentication & authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
+// 4. Default MVC route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-
+// 5. Map Razor Pages (Identity pages: /Identity/Account/Login, etc.)
 app.MapRazorPages();
 
 app.Run();
