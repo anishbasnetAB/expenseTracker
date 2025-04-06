@@ -134,13 +134,13 @@ namespace expenseTracker.Controllers
         }
 
         // GET: Expenses/Details/{year}/{month}
-        // Shows a specific month’s expenses + category-wise pie chart
+        // Shows detail a specific month’s expenses + category-wise pie chart
         [HttpGet]
         public async Task<IActionResult> Details(int year, int month)
         {
             // 1. Query expenses for the specified month
             var expenses = await _context.Expenses
-                .Where(e => e.ExpenseDate.Year == year && e.ExpenseDate.Month == month)
+                .Where(e => e.ExpenseDate.Year == year && e.ExpenseDate.Month == month) // fetches expenses for the given year 
                 .Include(e => e.Category)
                 .ToListAsync();
 
@@ -149,12 +149,12 @@ namespace expenseTracker.Controllers
                 .GroupBy(e => e.Category.Name)
                 .Select(g => new
                 {
-                    CategoryName = g.Key,
+                    CategoryName = g.Key, //this part group the ecpenses by category and calculates the total amount for each 
                     Total = g.Sum(e => e.Amount)
                 })
                 .ToList();
 
-            ViewBag.CategoryData = categoryData;
+            ViewBag.CategoryData = categoryData; //pie
 
             // 3. Display month name
             ViewBag.MonthName = new DateTime(year, month, 1).ToString("MMMM yyyy");
@@ -166,3 +166,5 @@ namespace expenseTracker.Controllers
         }
     }
 }
+
+// 

@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using expenseTracker.Data;
 
 namespace expenseTracker.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,14 +20,13 @@ namespace expenseTracker.Controllers
             var currentMonth = DateTime.Now.Month;
             var currentYear = DateTime.Now.Year;
 
-            // Monthly total expenses
+            // Total monthly expenses
             var totalMonthlyExpense = await _context.Expenses
                 .Where(e => e.ExpenseDate.Month == currentMonth && e.ExpenseDate.Year == currentYear)
                 .SumAsync(e => e.Amount);
-
             ViewBag.TotalMonthlyExpense = totalMonthlyExpense;
 
-            // Bar chart data (monthly expenses)
+            // Bar chart data: Monthly expenses
             var monthlyExpenses = await _context.Expenses
                 .Where(e => e.ExpenseDate.Year == currentYear)
                 .GroupBy(e => e.ExpenseDate.Month)
@@ -36,10 +37,9 @@ namespace expenseTracker.Controllers
                 })
                 .OrderBy(x => x.Month)
                 .ToListAsync();
-
             ViewBag.MonthlyExpenses = monthlyExpenses;
 
-            // Pie chart data (category-wise expenses)
+            // Pie chart data: Category-wise expenses
             var categoryExpenses = await _context.Expenses
                 .Where(e => e.ExpenseDate.Year == currentYear)
                 .Include(e => e.Category)
@@ -50,7 +50,6 @@ namespace expenseTracker.Controllers
                     Total = group.Sum(e => e.Amount)
                 })
                 .ToListAsync();
-
             ViewBag.CategoryExpenses = categoryExpenses;
 
             return View();

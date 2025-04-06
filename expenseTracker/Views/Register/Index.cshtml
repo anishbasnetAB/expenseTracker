@@ -6,6 +6,9 @@
 
 <h2>Register</h2>
 
+@* Displays all error messages from ModelState *@
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
 <form asp-action="Index" method="post">
     <div class="mb-3">
         <label asp-for="FullName" class="form-label"></label>

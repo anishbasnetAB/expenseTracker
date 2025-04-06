@@ -1,5 +1,5 @@
 using expenseTracker.Data;
-using expenseTracker.Models; // Needed for ApplicationUser
+using expenseTracker.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,14 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// 1. Configure Entity Framework Core and SQL Server
+// Configure Entity Framework Core with SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 2. Configure ASP.NET Core Identity using ApplicationUser
+// Configure ASP.NET Core Identity using ApplicationUser
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Override the default cookie configuration to use your custom login path
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+});
 
 var app = builder.Build();
 
@@ -31,16 +37,17 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// 3. Enable authentication & authorization
+// Enable authentication & authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 4. Default MVC route
+// Default MVC route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// 5. Map Razor Pages (Identity pages: /Identity/Account/Login, etc.)
+// Map Razor Pages (for Identity UI, if used)
 app.MapRazorPages();
 
 app.Run();
+    
