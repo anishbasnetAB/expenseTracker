@@ -20,12 +20,14 @@ namespace expenseTracker.Models
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
 
-        // 🛠 Add this property to match your Views/Controllers
         [Required]
         [DataType(DataType.Date)]
         public DateTime ExpenseDate { get; set; } = DateTime.Now;
 
-        // 🛠 Add this property to match your Views/Controllers
         public string? Description { get; set; }
+
+        // New property to associate the expense with a user
+        public string? UserId { get; set; }
+        public ApplicationUser? User { get; set; }
     }
 }

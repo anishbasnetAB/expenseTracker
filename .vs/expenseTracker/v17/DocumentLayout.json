@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\assignments\\C#\\expenseTracker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Migrations\\20250407022603_adeesd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:expenseTracker\\Migrations\\20250407022603_adeesd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\views\\register\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\views\\register\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -29,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\models\\monthlyhistoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -89,10 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|solutionrelative:expensetracker\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{990BA998-AA2B-4ACD-B1A0-A1C812F4F6A7}|expenseTracker\\expenseTracker.csproj|d:\\assignments\\c#\\expensetracker\\expensetracker\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -150,11 +154,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Home\\Index.cshtml",
@@ -163,12 +167,24 @@
               "ViewState": "AQIAAEwAAAAAAAAAAAAUwG4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-19T03:21:28.82Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250407022603_adeesd.cs",
+              "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Migrations\\20250407022603_adeesd.cs",
+              "RelativeDocumentMoniker": "expenseTracker\\Migrations\\20250407022603_adeesd.cs",
+              "ToolTip": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Migrations\\20250407022603_adeesd.cs",
+              "RelativeToolTip": "expenseTracker\\Migrations\\20250407022603_adeesd.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T02:26:03.588Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "RegistrationConfirmation.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Register\\RegistrationConfirmation.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Register\\RegistrationConfirmation.cshtml",
@@ -176,12 +192,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Register\\RegistrationConfirmation.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T15:53:12.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T15:53:12.505Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Shared\\_LoginPartial.cshtml",
@@ -189,12 +204,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AQIAAAcAAAAAAAAAAAAmwB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T15:46:46.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T15:46:46.52Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Account\\Login.cshtml",
@@ -202,12 +216,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Account\\Login.cshtml",
               "ViewState": "AQIAAAIAAAAAAAAAAAAmwBgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T15:42:58.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T15:42:58.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Controllers\\AccountController.cs",
@@ -215,12 +228,11 @@
               "RelativeToolTip": "expenseTracker\\Controllers\\AccountController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T15:40:59.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T15:40:59.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Categories\\Edit.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Categories\\Edit.cshtml",
@@ -228,12 +240,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Categories\\Edit.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T15:30:41.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T15:30:41.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Models\\ErrorViewModel.cs",
@@ -241,12 +252,11 @@
               "RelativeToolTip": "expenseTracker\\Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T15:29:15.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T15:29:15.269Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Categories\\Index.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Categories\\Index.cshtml",
@@ -254,12 +264,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Categories\\Index.cshtml",
               "ViewState": "AQIAAAEAAAAAAAAAAAAUwCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T16:41:16.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:41:16.111Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Expenses\\Index.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Expenses\\Index.cshtml",
@@ -271,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Home\\Privacy.cshtml",
@@ -279,12 +288,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Home\\Privacy.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T16:41:03.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:41:03.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\_ViewImports.cshtml",
@@ -296,20 +304,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Controllers\\HomeController.cs",
               "RelativeToolTip": "expenseTracker\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAmwDoAAAAAAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAmwDwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T16:34:26.552Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Controllers\\CategoriesController.cs",
@@ -317,12 +325,11 @@
               "RelativeToolTip": "expenseTracker\\Controllers\\CategoriesController.cs",
               "ViewState": "AQIAAEAAAAAAAAAAAADwv2AAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:21:30.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:21:30.341Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Categories\\Delete.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Categories\\Delete.cshtml",
@@ -330,12 +337,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Categories\\Delete.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T16:21:16.071Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:21:16.071Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Categories\\Create.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Categories\\Create.cshtml",
@@ -343,12 +349,11 @@
               "RelativeToolTip": "expenseTracker\\Views\\Categories\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T16:21:06.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:21:06.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Models\\Category.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Models\\Category.cs",
@@ -356,12 +361,11 @@
               "RelativeToolTip": "expenseTracker\\Models\\Category.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:13:22.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:13:22.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\appsettings.json",
               "RelativeDocumentMoniker": "expenseTracker\\appsettings.json",
@@ -369,12 +373,11 @@
               "RelativeToolTip": "expenseTracker\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-25T16:03:40.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:03:40.274Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "20250319221301_AddApplicationUser2.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Migrations\\20250319221301_AddApplicationUser2.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Migrations\\20250319221301_AddApplicationUser2.cs",
@@ -386,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "ApplicationDbContextModelSnapshot.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Migrations\\ApplicationDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Migrations\\ApplicationDbContextModelSnapshot.cs",
@@ -398,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\_ViewStart.cshtml",
@@ -410,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Register\\Index.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Register\\Index.cshtml",
@@ -423,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "20250319214313_AddApplicationUser1.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Migrations\\20250319214313_AddApplicationUser1.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Migrations\\20250319214313_AddApplicationUser1.cs",
@@ -435,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "RegisterController.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Controllers\\RegisterController.cs",
@@ -443,12 +446,11 @@
               "RelativeToolTip": "expenseTracker\\Controllers\\RegisterController.cs",
               "ViewState": "AQIAACwAAAAAAAAAAAAmwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T21:38:50.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T21:38:50.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "RegistrationViewModel.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Models\\RegistrationViewModel.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Models\\RegistrationViewModel.cs",
@@ -456,12 +458,11 @@
               "RelativeToolTip": "expenseTracker\\Models\\RegistrationViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T21:38:05.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T21:38:05.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "20250319213207_AddApplicationUser.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Migrations\\20250319213207_AddApplicationUser.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Migrations\\20250319213207_AddApplicationUser.cs",
@@ -473,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Models\\ApplicationUser.cs",
@@ -481,12 +482,11 @@
               "RelativeToolTip": "expenseTracker\\Models\\ApplicationUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T21:28:32.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T21:28:32.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Data\\ApplicationDbContext.cs",
@@ -498,20 +498,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 3,
               "Title": "Expense.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Models\\Expense.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Models\\Expense.cs",
               "ToolTip": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Models\\Expense.cs",
               "RelativeToolTip": "expenseTracker\\Models\\Expense.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAYwB8AAAAAAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwCEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T03:39:48.198Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Shared\\_Layout.cshtml",
@@ -519,25 +519,24 @@
               "RelativeToolTip": "expenseTracker\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAACYAAAAAAAAAAAAmwDwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T03:26:33.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T03:26:33.057Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 2,
               "Title": "ExpensesController.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Controllers\\ExpensesController.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Controllers\\ExpensesController.cs",
               "ToolTip": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Controllers\\ExpensesController.cs",
               "RelativeToolTip": "expenseTracker\\Controllers\\ExpensesController.cs",
-              "ViewState": "AQIAAIkAAAAAAAAAAAAIwKoAAAAAAAAA",
+              "ViewState": "AQIAALkAAAAAAAAAAAAqwMkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T03:21:52.517Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "MonthlyHistoryViewModel.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Models\\MonthlyHistoryViewModel.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Models\\MonthlyHistoryViewModel.cs",
@@ -545,12 +544,11 @@
               "RelativeToolTip": "expenseTracker\\Models\\MonthlyHistoryViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T03:21:49.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T03:21:49.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "HistoryDetails.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Expenses\\HistoryDetails.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Expenses\\HistoryDetails.cshtml",
@@ -562,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "History.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Expenses\\History.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Expenses\\History.cshtml",
@@ -574,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Views\\Expenses\\Create.cshtml",
               "RelativeDocumentMoniker": "expenseTracker\\Views\\Expenses\\Create.cshtml",
@@ -586,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\assignments\\C#\\expenseTracker\\expenseTracker\\Program.cs",
               "RelativeDocumentMoniker": "expenseTracker\\Program.cs",
@@ -594,8 +592,7 @@
               "RelativeToolTip": "expenseTracker\\Program.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAmwDQAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T18:28:17.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T18:28:17.442Z"
             }
           ]
         }

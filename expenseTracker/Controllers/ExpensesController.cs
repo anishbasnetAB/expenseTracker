@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using expenseTracker.Data;
 using expenseTracker.Models;
+using System.Security.Claims;
 
 namespace expenseTracker.Controllers
 {
@@ -18,7 +19,13 @@ namespace expenseTracker.Controllers
         // GET: Expenses
         public async Task<IActionResult> Index()
         {
-            var expenses = await _context.Expenses.Include(e => e.Category).ToListAsync();
+            // Get current user's ID
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            // Retrieve only the expenses that belong to the current user
+            var expenses = await _context.Expenses
+                .Where(e => e.UserId == userId)
+                .Include(e => e.Category)
+                .ToListAsync();
             return View(expenses);
         }
 
@@ -36,6 +43,8 @@ namespace expenseTracker.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Assign the current user's ID to the expense
+                expense.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 _context.Add(expense);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -53,6 +62,13 @@ namespace expenseTracker.Controllers
             var expense = await _context.Expenses.FindAsync(id);
             if (expense == null) return NotFound();
 
+            // Optionally: Verify that the expense belongs to the current user
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (expense.UserId != userId)
+            {
+                return Unauthorized();
+            }
+
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", expense.CategoryId);
             return View(expense);
         }
@@ -63,6 +79,13 @@ namespace expenseTracker.Controllers
         public async Task<IActionResult> Edit(int id, Expense expense)
         {
             if (id != expense.Id) return NotFound();
+
+            // Ensure the expense belongs to the logged in user
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (expense.UserId != userId)
+            {
+                return Unauthorized();
+            }
 
             if (ModelState.IsValid)
             {
@@ -84,7 +107,17 @@ namespace expenseTracker.Controllers
                 .Include(e => e.Category)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (expense == null) return NotFound();
+            if (expense == null)
+            {
+                return NotFound();
+            }
+
+            // Optionally: Check if the expense belongs to the current user
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (expense.UserId != userId)
+            {
+                return Unauthorized();
+            }
 
             return View(expense);
         }
@@ -95,21 +128,27 @@ namespace expenseTracker.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var expense = await _context.Expenses.FindAsync(id);
-            if (expense != null)
+            // Verify the expense belongs to the current user before deleting
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (expense == null || expense.UserId != userId)
             {
-                _context.Expenses.Remove(expense);
-                await _context.SaveChangesAsync();
+                return Unauthorized();
             }
+
+            _context.Expenses.Remove(expense);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         // GET: Expenses/History
-        // Displays monthly summary (grouped by month, year)
         public async Task<IActionResult> History(int? year, int? month)
         {
-            var expenses = _context.Expenses.Include(e => e.Category).AsQueryable();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var expenses = _context.Expenses
+                .Where(e => e.UserId == userId)
+                .Include(e => e.Category)
+                .AsQueryable();
 
-            // If user clicked a specific month
             if (year.HasValue && month.HasValue)
             {
                 expenses = expenses.Where(e => e.ExpenseDate.Year == year && e.ExpenseDate.Month == month);
@@ -117,7 +156,6 @@ namespace expenseTracker.Controllers
                 return View("HistoryDetails", await expenses.ToListAsync());
             }
 
-            // Otherwise, show monthly grouped data
             var historyData = await expenses
                 .GroupBy(e => new { e.ExpenseDate.Year, e.ExpenseDate.Month })
                 .Select(g => new MonthlyHistoryViewModel
@@ -134,37 +172,30 @@ namespace expenseTracker.Controllers
         }
 
         // GET: Expenses/Details/{year}/{month}
-        // Shows detail a specific month’s expenses + category-wise pie chart
         [HttpGet]
         public async Task<IActionResult> Details(int year, int month)
         {
-            // 1. Query expenses for the specified month
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var expenses = await _context.Expenses
-                .Where(e => e.ExpenseDate.Year == year && e.ExpenseDate.Month == month) // fetches expenses for the given year 
+                .Where(e => e.UserId == userId && e.ExpenseDate.Year == year && e.ExpenseDate.Month == month)
                 .Include(e => e.Category)
                 .ToListAsync();
 
-            // 2. Prepare data for the Pie Chart
             var categoryData = expenses
                 .GroupBy(e => e.Category.Name)
                 .Select(g => new
                 {
-                    CategoryName = g.Key, //this part group the ecpenses by category and calculates the total amount for each 
+                    CategoryName = g.Key,
                     Total = g.Sum(e => e.Amount)
                 })
                 .ToList();
 
-            ViewBag.CategoryData = categoryData; //pie
-
-            // 3. Display month name
+            ViewBag.CategoryData = categoryData;
             ViewBag.MonthName = new DateTime(year, month, 1).ToString("MMMM yyyy");
             ViewBag.Year = year;
             ViewBag.Month = month;
 
-            // 4. Return the monthly expenses
             return View(expenses);
         }
     }
 }
-
-// 
