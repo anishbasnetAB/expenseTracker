@@ -19,18 +19,21 @@ namespace expenseTracker.Controllers
         public async Task<IActionResult> Index()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var currentMonth = DateTime.Now.Month;
-            var currentYear = DateTime.Now.Year;
+            var now = DateTime.Now;
+            var startOfMonth = new DateTime(now.Year, now.Month, 1);
+            var startOfNextMonth = startOfMonth.AddMonths(1);
 
-            // Total monthly expenses for the current user
+            // Total monthly expenses for the current user using a date range filter
             var totalMonthlyExpense = await _context.Expenses
-                .Where(e => e.UserId == userId && e.ExpenseDate.Month == currentMonth && e.ExpenseDate.Year == currentYear)
+                .Where(e => e.UserId == userId &&
+                            e.ExpenseDate >= startOfMonth &&
+                            e.ExpenseDate < startOfNextMonth)
                 .SumAsync(e => e.Amount);
             ViewBag.TotalMonthlyExpense = totalMonthlyExpense;
 
-            // Bar chart data: Monthly expenses for the current user
+            // Bar chart data: Monthly expenses for the current user for the current year
             var monthlyExpenses = await _context.Expenses
-                .Where(e => e.UserId == userId && e.ExpenseDate.Year == currentYear)
+                .Where(e => e.UserId == userId && e.ExpenseDate.Year == now.Year)
                 .GroupBy(e => e.ExpenseDate.Month)
                 .Select(group => new
                 {
@@ -41,9 +44,9 @@ namespace expenseTracker.Controllers
                 .ToListAsync();
             ViewBag.MonthlyExpenses = monthlyExpenses;
 
-            // Pie chart data: Category-wise expenses for the current user
+            // Pie chart data: Category-wise expenses for the current user for the current year
             var categoryExpenses = await _context.Expenses
-                .Where(e => e.UserId == userId && e.ExpenseDate.Year == currentYear)
+                .Where(e => e.UserId == userId && e.ExpenseDate.Year == now.Year)
                 .Include(e => e.Category)
                 .GroupBy(e => e.Category.Name)
                 .Select(group => new

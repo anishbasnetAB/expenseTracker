@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  padding:10%;
 }
 
 @media (min-width: 768px) {
@@ -20,6 +21,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* full viewport height */
+}
+
 
 table thead th {
     background-color: #181818 !important;
